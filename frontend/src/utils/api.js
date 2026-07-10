@@ -5,6 +5,7 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
+console.log(import.meta.env.VITE_API_URL);
 // Attach JWT on every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('portfolio_token')
