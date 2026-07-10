@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
@@ -35,7 +35,7 @@ WORKDIR /var/www
 # Copy composer files first (layer caching)
 COPY composer.json ./
 
-# Install dependencies — ignore security advisories via CLI flag
+# Disable advisory blocking then install
 RUN composer config --no-interaction policy.advisories.block false && \
     composer install \
         --no-scripts \
@@ -43,8 +43,7 @@ RUN composer config --no-interaction policy.advisories.block false && \
         --no-dev \
         --prefer-dist \
         --no-interaction \
-        --no-progress \
-        --ignore-platform-reqs
+        --no-progress
 
 # Copy application code
 COPY . .

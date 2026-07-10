@@ -3,7 +3,7 @@
     "type": "project",
     "description": "Portfolio Backend API",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "laravel/framework": "^11.44",
         "tymon/jwt-auth": "^2.1",
         "intervention/image": "^3.0"
@@ -54,6 +54,9 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+        },
+        "advisories": {
+            "block": false
         },
         "policy": {
             "advisories": {
