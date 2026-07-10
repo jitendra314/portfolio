@@ -55,9 +55,6 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         },
-        "advisories": {
-            "block": false
-        },
         "policy": {
             "advisories": {
                 "block": false
